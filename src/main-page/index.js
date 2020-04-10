@@ -6,7 +6,7 @@ import FeaturedHouse from './featured-house';
 import HouseFilter from './house-filter';
 import SearchResults from '../search-results';
 import HouseDetail from '../house';
-
+import AppPresentation from './app-presentation';
 class App extends Component {
 
     // initialise states with constructor
@@ -79,18 +79,6 @@ class App extends Component {
     }
 
     render() { 
-      let activeComponent = null;
-
-      if (this.state.country){
-        activeComponent = <SearchResults filteredHouses={this.state.filteredHouses} setActiveHouse={this.setActiveHouse}></SearchResults>
-      }
-      if (this.state.activeHouse){
-        activeComponent = <HouseDetail house={this.state.activeHouse} />
-      }
-      if( !activeComponent ) {
-        activeComponent = <FeaturedHouse house={this.state.featuredHouse} />
-      }
-
       if ( this.state.hasError ) {
         return (
           <div className="container">
@@ -100,13 +88,17 @@ class App extends Component {
           );
       }
       return (
-          <div className="container">
-            <Header subtitle="Nice moves" />
-            <HouseFilter filterHouses={this.filterHouses} countries={this.state.countries} />
-            {activeComponent}
-          </div>
-       );
-      }
+         <AppPresentation 
+          country={ this.state.country }
+          countries={this.state.countries}
+          filteredHouses={this.state.filteredHouses}
+          featuredHouse={this.state.featuredHouse}
+          setActiveHouse={this.setActiveHouse}
+          activeHouse={this.state.activeHouse}
+          filterHouses={this.filterHouses}
+         />
+      );
+    }
 }
 
 export default App;
