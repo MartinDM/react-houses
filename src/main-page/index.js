@@ -7,6 +7,20 @@ import HouseFilter from './house-filter';
 import SearchResults from '../search-results';
 import HouseDetail from '../house';
 import AppPresentation from './app-presentation';
+
+import { BrowserRouter, Link, Switch, Route} from 'react-router-dom'
+
+const Root = () => {
+  return ( <p>Root</p> );
+}
+
+const Search = () => {
+  return ( <p>Sesrch omponen</p>  );
+}
+const List = () => {
+  return ( <p>List componnt</p> );
+}
+
 class App extends Component {
 
     // initialise states with constructor
