@@ -1,25 +1,7 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
 import './main-page.css';
 import Header from './header';
-import FeaturedHouse from './featured-house';
-import HouseFilter from './house-filter';
-import SearchResults from '../search-results';
-import HouseDetail from '../house';
 import AppPresentation from './app-presentation';
-
-import { BrowserRouter, Link, Switch, Route} from 'react-router-dom'
-
-const Root = () => {
-  return ( <p>Root</p> );
-}
-
-const Search = () => {
-  return ( <p>Sesrch omponen</p>  );
-}
-const List = () => {
-  return ( <p>List componnt</p> );
-}
 
 class App extends Component {
 
@@ -68,7 +50,7 @@ class App extends Component {
       this.setState({filteredHouses})
       this.setState({ country })
     }
-
+ 
     determineFeaturedHouse = () => {
       if (this.allHouses){
         const randomIndex = Math.floor( Math.random() * this.allHouses.length);
@@ -102,7 +84,8 @@ class App extends Component {
           );
       }
       return (
-         <AppPresentation 
+        <div> 
+          <AppPresentation 
           country={ this.state.country }
           countries={this.state.countries}
           filteredHouses={this.state.filteredHouses}
@@ -110,8 +93,9 @@ class App extends Component {
           setActiveHouse={this.setActiveHouse}
           activeHouse={this.state.activeHouse}
           filterHouses={this.filterHouses}
-         />
-      );
+          />
+        </div>
+        );
     }
 }
 

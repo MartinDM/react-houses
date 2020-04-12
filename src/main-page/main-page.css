@@ -12,3 +12,11 @@
   border-radius: 2px;
   background-color: rgb(255, 190, 166);
 }
+nav {
+  display: flex;
+  justify-content: space-around;
+  min-height: 10vh;
+  background: grey;
+  color: white;
+  list-style: none;
+}
