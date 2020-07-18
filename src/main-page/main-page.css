@@ -5,12 +5,13 @@
 .subtitle {
   font-style: italic;
   font-size: x-large;
-  color: coral;
+  color: black;
 }
 
 .featuredHouse {
   border-radius: 2px;
-  background-color: rgb(255, 190, 166);
+  background-color: #e9ecef;
+  padding: 1em;
 }
 nav {
   display: flex;

@@ -1,4 +1,7 @@
 .price {
   font-size: larger;
-  color: coral;
+}
+
+.email-ion {
+  cursor: pointer; 
 }

@@ -24,13 +24,13 @@ export default class House extends Component {
         <div className="row">
           <div className="col-md-7">
             <img className="img-fluid" src={`https://images.pexels.com/photos/${house.photo}/pexels-photo-${house.photo}.jpeg?w=600&h=400&auto=compress&cs=tinysrgb`} alt="House" />
-            </div>
-            <div className="col-md-5">
-              <p className="price">${house.price}</p>
-              <p>{house.description}</p>
-              <img src={emailIcon} height="50" alt="inquiry" onClick={this.inquiryToggle} />
-              {inquiryComponent}
-            </div>
+          </div>
+          <div className="col-md-5">
+            <p className="price">${house.price}</p>
+            <p>{house.description}</p>
+            <img src={emailIcon} height="50" alt="inquiry" class="email-ion" onClick={this.inquiryToggle} />
+            {inquiryComponent}
+          </div>
         </div>  
        
       </div>
